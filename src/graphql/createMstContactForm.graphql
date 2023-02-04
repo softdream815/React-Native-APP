@@ -1,0 +1,22 @@
+mutation createContactRequest(
+  $fullname: String,
+  $email : String,
+  $phone : String,
+  $subject : String,
+  $message : String,
+  $date : DateTime
+){
+  createMstContactForm(
+    mstContactForm: {
+      contactId: 0,
+      contactNo: $phone,
+      createdDate: $date,
+      emailAddress: $email,
+      fullName: $fullname,
+      message: $message,
+      subject: $subject
+    }
+  ) {
+    contactId
+  }
+}

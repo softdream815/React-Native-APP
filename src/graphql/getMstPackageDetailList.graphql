@@ -1,0 +1,25 @@
+query getMstPackageDetailList($id: Int){ 
+  getMstPackageDetailList(packageId: $id, status:true){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      activeText,
+      actualValue,
+      amount,
+      attributeID,
+      attributeName,
+      isActive,
+      packageDetailsID,
+      packageID,
+      pD_ActiveText,
+      pD_isActive,
+      sortOrder,
+      value
+    }
+  }
+}

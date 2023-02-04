@@ -1,0 +1,14 @@
+ query mstVersions {
+  mstVersions(page:1, size:10)
+  {
+    count, 
+    currentPage, 
+    nextPage, 
+    prevPage, 
+    data{
+      versionId, 
+      versionNumber,
+      versionType
+    }
+  }
+}

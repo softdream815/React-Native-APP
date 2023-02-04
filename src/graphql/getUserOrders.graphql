@@ -1,0 +1,79 @@
+query GetPrdOdersByUser(
+  $orderStatusTypeId:Int = null,
+  $fromDate: DateTime, 
+  $toDate: DateTime,
+  $page: ID!
+ ){
+  prdOrdersByUser(
+    orderStatusTypeId : $orderStatusTypeId,
+    fromDate : $fromDate, 
+    toDate : $toDate,
+    page : $page, 
+    size : 50
+  ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages
+    result{
+      createdBy,
+      createdDate,
+      downloadCount,
+      expiredDate,
+      modifiedBy,
+      modifiedDate,
+      orderAmount,
+      orderDate,
+      orderId,
+      orderIdstring,
+      orderIpaddress,
+      orderSessionId,
+      orderStatusId,
+      orderTotal,
+      paymentDate,
+      productId,
+      transactionId,
+      userId,
+      prdOrderDetails{
+        createdBy,
+        createdDate,
+        downloadCount,
+        modifiedBy,
+        modifiedDate,
+        orderAmount,
+        orderDetailsId,
+        orderId,
+        orderQuantity,
+        productId,
+        productPrice,
+        products{
+          productName
+          mapProductDocument{
+            documentName,
+            documentPath
+          }
+          mapProductImages{
+            imagePath,
+            thumbNailPath
+          }
+        }
+      }
+      prdOrderStatus{
+        createdBy,
+        createdDate,
+        modifiedBy,
+        modifiedDate,
+        orderStatusTypeId
+        prdOrderStatusType
+        {
+          orderStatusTypeId
+          statusName,
+          statusSequence
+        }
+      }
+    }
+  }
+}

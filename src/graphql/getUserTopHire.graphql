@@ -1,0 +1,28 @@
+query getUserTopHires($size:Int!=100){
+  getUserTopHire(
+    page: 1,
+    size: $size
+  ) {
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      userID,
+      firstName,
+      lastName,
+      email,
+      status,
+      userStatus,
+      userProfileImage,
+      userProfileThumbNailImage,
+      bidAmount,
+      productID,
+      productName,
+      orderID,
+    }
+  }
+}

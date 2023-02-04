@@ -1,0 +1,33 @@
+mutation MstItemRequest(
+  $userId: Int
+  $title: String
+  $desc: String
+  $catId: Int
+  $date:DateTime
+  $suburbId: Int
+  $files: [Upload!]
+) {
+  postMstItemRequest(
+    mstItemRequest:{
+      itemRequestTitle: $title
+      itemRequestDescription: $desc
+      itemRequestDate: $date
+      categoryId: $catId
+      suburbId: $suburbId
+      requestApprovedMail: false
+      createdBy: $userId
+      createdDate: $date
+      modifiedDate: $date
+    },
+    files: $files
+  ) {
+    count
+    currentPage
+    message
+    nextPage
+    prevPage
+    success
+    totalPages
+    result
+  }
+}

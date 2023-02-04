@@ -1,0 +1,19 @@
+mutation createPrdHire(
+  $formDate: DateTime
+  $toDate: DateTime
+  $productId: Int
+  $userId: Int
+) {
+  createPrdHire(
+    prdHire: {
+      fromDate: $fromDate
+      toDate: $toDate
+      productId: $productId
+      returned: 0
+      returnedDate: $toDate
+      userId: $userId
+    }
+  ) {
+    hireId
+  }
+}

@@ -1,0 +1,39 @@
+mutation updateCartItem($pid: Int!,$quantity:Int!,$userid: Int!, $fromDate: DateTime = null, $endDate: DateTime = null, $dateCreated: DateTime) {
+    postPrdShoppingCartOptimized(
+      prdShoppingCart: {
+        productId: $pid
+        dateCreated: $dateCreated
+        quantity: $quantity
+        fromDate: $fromDate
+        endDate: $endDate
+        userId: $userid
+      }
+    ) {
+      count
+      currentPage
+      message
+      nextPage
+      prevPage
+      success
+      totalPages
+      result {
+        prdShoppingCartDto {
+          categoryID
+          categoryName
+          description
+          productID
+          productImage
+          productName
+          productNumber
+          quantity
+          recordID
+          totalPrice
+          unitCost
+        }
+        totalAmount,
+        amountExlVat,
+        vatAmount,
+        recuringAmount
+      }
+    }
+  }

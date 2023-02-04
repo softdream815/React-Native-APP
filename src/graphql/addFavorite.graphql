@@ -1,0 +1,18 @@
+mutation CreateFavourites($productId: Int,$createDate: DateTime,$userId: Int){
+  createMstFavourites(
+    mstFavourites: {
+        companyId: null,
+        createdBy: 0,
+        createdDate: $createDate,
+        eflyerId: null,
+        modifiedBy: null,
+        modifiedDate: null,
+        mstFavouriteId: 0,
+        productId: $productId,
+        specialId: null,
+        userId: $userId
+    }
+  ){
+    mstFavouriteId
+  }
+}

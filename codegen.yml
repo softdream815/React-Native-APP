@@ -1,0 +1,18 @@
+overwrite: true
+schema: 'https://mobileapiv2.ezyfind.co.za/graphql'
+documents: 'src/**/*.graphql'
+generates:
+  src/generated/graphql-types.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-query'
+    config:
+      fetcher: graphql-request
+      omitOperationSuffix: true     
+      addInfiniteQuery: true
+      pureMagicComment: true     
+      func: ../fetcher#useFetchData
+      isReactHook: true
+
+  

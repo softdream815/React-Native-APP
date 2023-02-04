@@ -1,0 +1,51 @@
+import {ProductDtType} from '@app/generated/graphql-types';
+import {RootStateType as _RootStateType} from '@app/redux/store';
+import {PrdOrdersType} from '@app/generated/graphql-types';
+
+export type UserType = {
+  firstName: string;
+  lastName: string;
+  vGender: string;
+  email: string;
+  streetAddress: string;
+  provinceID: string;
+  provinceName: string;
+  cityID: string;
+  cityName: string;
+  suburbID: string;
+  suburbName: string;
+  longitude: string;
+  latitude: string;
+  zipCode: string;
+  userProfileImage: string;
+  paymentUrl: string;
+  packageID: string;
+  token: string;
+  tokenExpires: string;
+  isLoggedIn: boolean;
+  isGuest: boolean;
+  id: number;
+  role: string;
+  companyId: number;
+  jti: string;
+};
+
+export type CategoryType = {
+  categoryIcon: string;
+  categoryId: number;
+  categoryName: string;
+  categoryThumbNailIcon: string;
+  createdBy: string;
+  createdDate: string;
+  isActive: boolean;
+  isCategory: boolean;
+  isMainCategory: boolean;
+  isMenuAllowed: boolean;
+  modifiedBy: number;
+  modifiedDate: string;
+  parentCategoryId: number;
+  timeDelayException: boolean;
+};
+export type ProductType = ProductDtType;
+export type RootStateType = _RootStateType;
+export type OrderType = PrdOrdersType;

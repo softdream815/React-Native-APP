@@ -1,0 +1,87 @@
+query getPrdProductList(
+  $productName:String = null, 
+  $page:Int = 1,
+  $size:Int = 10, 
+  $catgoryId: Int = null, 
+  $domainCategoryIds: String = null, 
+  $salesTypeId: Int = null, 
+  $companyId : Int = null,
+  $latitude: String = null,
+  $longitude: String = null
+  ) {
+ getPrdProductList(
+    productName: $productName,
+    productId: null,
+    fromPrice:null,
+    toPrice:null,
+    categoryId: $catgoryId,
+    domainCategoryIds:$domainCategoryIds,
+    status: null,
+    salesTypeId:$salesTypeId,
+    scopeId:null,
+    userId:null,  
+    companyId:$companyId, 
+    latitude: $latitude,
+    longitude: $longitude,
+    page:$page, 
+    size:$size){
+    count,
+    currentPage,    
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      activeText,
+      categoryID,
+      categoryName,
+      description,
+      documentName,
+      documentPath,
+      isActive,
+      ratingScore,
+      productID,
+      productImage,
+      productName,
+      productNumber,
+      salesTypeId,
+      typeID,
+      inventory,
+      clickCount,
+      viewCount
+      unitCost,
+      length, 
+      width, 
+      height, 
+      volume, 
+      weight, 
+      googleSchema,
+      domainCategory, 
+      startDate,
+      endDate,
+      companyID,
+      originalUnitCost,
+	  mapProductImages{        
+        imageName,
+        imagePath,
+        thumbNailPath
+      }   
+      prdBid{
+        bidId,
+        createdDate,
+        bidAmount,
+        userId
+      }
+      prdHire{
+        hireId, 
+        userId,
+        isAccepted,
+        fromDate, 
+        toDate,
+        returned
+      }
+     
+    }
+  }
+}

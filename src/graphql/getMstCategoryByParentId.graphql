@@ -1,0 +1,31 @@
+query getMstCategoryByParentId( $id:Int,$page:Int,$size:Int) {
+ getMstCategoryByParentId(
+     id:$id,
+     page:$page,
+     size:$size
+ ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      categoryIcon,
+      categoryId,
+      categoryName,
+      categoryThumbNailIcon,
+      createdBy,
+      createdDate,
+      isActive,
+      isCategory,
+      isMainCategory,
+      isMenuAllowed,
+      modifiedBy,
+      modifiedDate,
+      parentCategoryId,
+      timeDelayException
+    }
+  }
+}

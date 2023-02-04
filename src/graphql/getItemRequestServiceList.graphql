@@ -1,0 +1,34 @@
+query getItemRequestServiceList($domainCategoryIds: String = null,  $category: Int = null, $subCategoryId: Int = null, $page: Int = 1, $size: Int = 10){
+  getItemRequestServiceList(
+    domainCategoryIds: $domainCategoryIds,
+    categoryId: $category,
+    subCategoryId: $subCategoryId,
+    page: $page,
+    size: $size
+  ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage, 
+    result {
+      itemRequestServiceTitle,
+      itemRequestServiceDescription,
+      itemRequestServiceStatusID,
+      uploadPath,
+      thumbNailPath,
+      categoryID,
+      subCategoryID,
+      domainCategoryID,
+      domainCategoryName{
+        categoryName
+      },
+      categoryName{
+        categoryName
+      },
+      subCategoryName{
+        categoryName
+      }
+    }
+  }
+ }

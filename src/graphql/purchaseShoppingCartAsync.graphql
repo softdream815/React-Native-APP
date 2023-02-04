@@ -1,0 +1,15 @@
+query purchaseShoppingCart{
+  purchaseShoppingCartAsync(id:5){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+        paymentUrl,
+        paymentMethod,
+    }
+  }
+}

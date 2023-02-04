@@ -1,0 +1,15 @@
+query getGuestLogin {
+    guestLogin{
+        count,
+        currentPage,
+        message,
+        nextPage,
+        prevPage,
+        success,
+        totalPages,
+        result{
+            validTo,
+            value
+        }
+    }
+}

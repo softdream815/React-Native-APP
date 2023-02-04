@@ -1,0 +1,23 @@
+mutation updateMstUserLocation($userId: Int!, $longitude: String, $latitude: String){
+  updateMstUserLocation(
+    mstUserInfo: {userId: $userId, longitude: $longitude, latitude: $latitude}
+  ) {
+    count
+    currentPage
+    message
+    nextPage
+    prevPage
+    success
+    totalPages
+    result {
+      firstName
+      lastName
+      email
+      streetAddress
+      longitude
+      latitude
+      zipCode
+      userProfileImage
+    }
+  }
+}

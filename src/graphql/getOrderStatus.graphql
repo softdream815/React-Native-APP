@@ -1,0 +1,12 @@
+query getOrderStatusTypes {
+  prdOrderStatusTypes(page:1, size:5){   
+    data{    
+    createdDate,
+    modifiedBy,
+    modifiedDate,
+    orderStatusTypeId,
+    statusName,
+    statusSequence
+    }
+  }
+}

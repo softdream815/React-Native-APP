@@ -1,0 +1,23 @@
+query getAllVehicleDetails {
+  getVehicles{     
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{    
+      vehicleID,
+      make,  
+      vIN,    
+      engineNumber,
+      description,       
+      dateOfExpiry,
+      registrationNumber,
+      sessionID, 
+      userID, 
+      createdDate          
+    }
+  }
+}

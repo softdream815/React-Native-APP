@@ -1,0 +1,46 @@
+query GetMagazinesList($companyId: String!) {
+  getMagazinesList(
+    franchiseId: null,
+    eflyerId: null,
+    magazineName: null,
+    statusIds: null,
+    companyIds: $companyId,
+    categoryIds: null,
+    provinceIds: null,
+    cityIds: null,
+    suburbIds: null,
+    page: 1,
+    size: 10
+  ){
+  result{
+  eflyerId,
+  magazineName,
+  eFlyerDescription,
+  categoryID,
+  categoryName,
+  startDate,
+  endDate,
+  statusId,
+  statusName,
+  companyId,
+  companyName,
+  companyDescription,
+  isMenu,
+  streetAddress,
+  countryID,
+  countryName,
+  provinceID,
+  provinceName,
+  cityID,
+  cityName,
+  suburbID,
+  suburb,
+  zipCode,
+  phone,
+  companyLocation
+  mapEflyersUploadDtos{
+  documentName
+  }
+  }
+  }
+  }

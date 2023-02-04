@@ -1,0 +1,37 @@
+query getShopingCart {
+  getPrdShoppingCart(page:1, size:20){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result {
+      prdShoppingCartDto {
+        categoryID
+        categoryName
+        description
+        productID
+        productImage
+        productName
+        productNumber
+        quantity
+        recordID
+        totalPrice
+        unitCost
+        prdProduct{
+          productId,
+          productName,
+          typeId,
+          scopeId,
+          salesTypeId
+        }
+      }
+      totalAmount,
+      amountExlVat,
+      vatAmount,
+      recuringAmount
+    }
+  }
+}

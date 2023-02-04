@@ -1,0 +1,18 @@
+ mutation PostMstCustomerEnquiry($title: String!,$companyId: Int!,$enquiryDescription: String!) {
+  addCustomerEnquiry(
+    customerEnquiry: {
+      companyId:$companyId,  
+      enquiryTitle:$title,
+      enquiryDescription:$enquiryDescription
+    }
+  ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result
+  }
+}

@@ -1,0 +1,18 @@
+mutation BidOnProduct($productId: Int,$amount: Decimal,$userId: Int) {
+   createPrdBid(
+    prdBid: {
+        bidAmount:$amount,
+        bidApprovedMail:false,
+        bidId: 0,
+        createdDate: null,
+        isAccepted:true,
+        isActive:true,
+        modifiedBy:0,
+        modifiedDate:null,
+        productId:$productId,
+        userId:$userId
+    }
+  ){
+    bidId
+  }
+}

@@ -1,0 +1,62 @@
+query GetBusinessList(
+  $size: Int!,
+  $categories : String = null,
+  $title : String = null
+){
+  getBusinessList(
+    companyId: null
+    companyName: $title
+    franchiseeId: null,
+    statusIds:"1",
+    categoryIds:$categories,
+    provinceIds:"",
+    cityIds:"",
+    suburbIds:""
+    page: 1,
+    size: $size
+  ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      bEEScorePoint,
+      bEEStatus,
+      bEEStatusID,
+      companyId,
+      companyName,
+      companyPercentage,
+      companyStatus,
+      companyStatusID,
+      compCityID,
+      compCityName,
+      compCountryID,
+      compCountryName,
+      compDescription,
+      compEmailId,
+      compHelpDeskNumber,
+      compPhone,
+      compProvinceID,
+      compProvinceName,
+      compStreetAddress,
+      compSuburb,
+      compSuburbID,
+      compWebSite,
+      directorsCount,
+      franchiseId,
+      intCompanyMBUDeviceID,
+      intCompanyMBUDeviceType,
+      intCompanyMBUEmail,
+      intCompanyMBUName,
+      joinDate,
+      logoPath,
+      procurementRecognition,
+      serviceTax,
+      vATNumber,
+      zipCode
+    }
+  }
+}

@@ -1,0 +1,78 @@
+query getSpecialProductList($productName: String = null, $domainCategoryIds: String = null, $companyId: Int = null, $size: Int = 10)  {
+  getPrdProductList(
+    productName: $productName,
+    productId: null,
+    fromPrice:null,
+    toPrice:null,
+    categoryId: null,
+    domainCategoryIds:$domainCategoryIds,
+    status: null,
+    salesTypeId:null,
+    scopeId: 2,
+    userId:null,  
+    companyId:$companyId, 
+    page:1, 
+    size:$size)
+    {
+      count,
+      currentPage,    
+      message,
+      nextPage,
+      prevPage,
+      success,
+      totalPages,
+      result
+      {
+        activeText,
+        categoryID,
+        categoryName,
+        description,
+        documentName,
+        documentPath,
+        isActive,
+        ratingScore,
+        productID,
+        productImage,
+        productName,
+        productNumber,
+        salesTypeId,
+        typeID,
+        inventory,
+        clickCount,
+        viewCount
+        unitCost,
+        length, 
+        width, 
+        height, 
+        volume, 
+        weight, 
+        googleSchema,
+        domainCategory, 
+        startDate,
+        endDate,
+        companyID,
+        originalUnitCost,
+        longitude,
+        latitude,
+        mapProductImages{        
+          imageName,
+          imagePath,
+          thumbNailPath
+        }   
+        prdBid{
+          bidId,
+          createdDate,
+          bidAmount,
+          userId
+        }
+        prdHire{
+          hireId, 
+          userId,
+          isAccepted,
+          fromDate, 
+          toDate,
+          returned
+        }
+      }
+    }
+}

@@ -1,0 +1,30 @@
+diff --git a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/navigator/path.ts b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/navigator/path.ts
+index 2344be4..6b7eb76 100644
+--- a/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/navigator/path.ts
++++ b/node_modules/react-native-curved-bottom-bar/src/CurvedBottomBar/components/navigator/path.ts
+@@ -8,7 +8,7 @@ export const getPath = (
+   borderTopLeftRight = false
+ ) => {
+   const height = scale(iHeight);
+-  const circleWidth = scale(centerWidth) + scale(16);
++  const circleWidth = scale(centerWidth) + scale(10);
+ 
+   const line: any = (shape as any)
+     .line()
+@@ -79,11 +79,11 @@ export const getPath = (
+     { x: (width - circleWidth) / 2 - scale(2), y: scale(10) },
+     { x: (width - circleWidth) / 2, y: scale(17) },
+ 
+-    { x: width / 2 - circleWidth / 2 + scale(8), y: height / 2 + scale(2) },
+-    { x: width / 2 - scale(10), y: height / 2 + scale(10) },
+-    { x: width / 2, y: height / 2 + scale(10) },
+-    { x: width / 2 + scale(10), y: height / 2 + scale(10) },
+-    { x: width / 2 + circleWidth / 2 - scale(8), y: height / 2 + scale(2) },
++    { x: width / 2 - circleWidth / 2 + scale(8), y: (height - scale(20)) / 2 + scale(2) },
++    { x: width / 2 - scale(10), y: (height - scale(20)) / 2 + scale(10) },
++    { x: width / 2, y: (height - scale(20)) / 2 + scale(10) },
++    { x: width / 2 + scale(10), y: (height - scale(20)) / 2 + scale(10) },
++    { x: width / 2 + circleWidth / 2 - scale(8), y: (height - scale(20)) / 2 + scale(2) },
+ 
+     { x: (width - circleWidth) / 2 + circleWidth, y: scale(17) }, // border center right
+     { x: (width - circleWidth) / 2 + circleWidth + scale(2), y: scale(10) },

@@ -1,0 +1,44 @@
+mutation MstVehicle(
+  $userId: Int
+  $registrationNumber: String
+  $desc: String
+  $engineNumber: String
+  $date: DateTime
+  $dateOfExpiry: DateTime
+  $vin: String
+  $make: String
+) {
+  postVehicle(
+    mstVehicle: {
+      vehicleID: 0
+      userID: $userId
+      engineNumber: $engineNumber
+      registrationNumber: $registrationNumber
+      make: $make
+      vIN: $vin
+      description: $desc
+      dateOfExpiry: $dateOfExpiry
+      createdDate: $date
+      sessionID: "d5c969fe-8f5d-4075-9620-7cfd414bd7b6"
+    }
+  ) {
+    count
+    currentPage
+    message
+    nextPage
+    prevPage
+    success
+    totalPages
+    result {
+      vehicleID
+      make
+      vIN
+      engineNumber
+      description
+      registrationNumber
+      sessionID
+      userID
+      createdDate
+    }
+  }
+}

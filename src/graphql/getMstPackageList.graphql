@@ -1,0 +1,40 @@
+query getMstPackageList($packageIds: String = null){
+  getMstPackageList(
+    packageIds: $packageIds,
+    includePackageIds: null,
+    excludePackageIds: null,
+    packageName: null,
+    packageId: null,
+    status:true){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      activeText,
+      amount,
+      isActive,
+      isRecommended,
+      packageID,
+      packageName,
+      recommendedText,
+      sortOrder,
+      threeMonths,
+      sixMonths,
+      twelveMonths,
+      threeMonthsVat,
+      sixMonthsVat,
+      twelveMonthsVat,
+      fiveDiscount,
+      tenDiscount,
+      fifteenDiscount,
+      fiveOFF,
+      tenOFF,
+      fifteenOFF,
+      zeroOFF
+    }
+  }
+}

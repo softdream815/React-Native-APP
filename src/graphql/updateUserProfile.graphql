@@ -1,0 +1,44 @@
+mutation updateMstUser(
+  $userId: Int!,
+  $latitude: String,
+  $longitude: String,
+  $streetAddress: String,
+  $suburbId: Int,
+  $cityId: Int,
+  $provinceId: Int,
+  $countryId: Int,
+  ) {
+  updateMstUsers(
+    mstUsers: {
+      userId: $userId,
+      cityId: $cityId,
+      countryId: $countryId,
+      latitude: $latitude,
+      longitude: $longitude,
+      provinceId: $provinceId,
+      streetAddress: $streetAddress,
+      suburbId: $suburbId,
+    }
+  ) {
+    count
+    currentPage
+    message
+    nextPage
+    prevPage
+    success
+    totalPages
+    result {
+      firstName
+      lastName
+      email
+      streetAddress
+      provinceId
+      cityId
+      suburbId
+      longitude
+      latitude
+      zipCode
+      userProfileImage
+    }
+  }
+}

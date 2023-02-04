@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "92bc8699-9042-47b8-99bb-f0349535b3ef",
+		"name": "Request Item",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Mst Item Request Copy 2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "\r\nmutation {\r\n  postMstItemRequest(mstItemRequest:{\r\n    itemRequestTitle: \"4 test request\",\r\n    itemRequestDescription:\"4 Test request\",\r\n    itemRequestDate:\"2021-08-13T08:36:47.000\",\r\n    categoryId:550,\r\n    suburbId:42,\r\n    requestApprovedMail:false,\r\n    createdBy:17518,\r\n    createdDate:\"2021-08-13T08:36:47.000\",\r\n    modifiedDate:\"2021-08-13T08:36:47.000\",\r\n    longitude:\"26.2041° S\",\r\n    latitude:\"28.0473° E\"\r\n  }\r\n  ){\r\n    count,\r\n    currentPage,\r\n    message,\r\n    nextPage,\r\n    prevPage,\r\n    success,\r\n    totalPages,\r\n    result\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/graphql",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Post Request Item with base64 image"
+			},
+			"response": []
+		}
+	]
+}

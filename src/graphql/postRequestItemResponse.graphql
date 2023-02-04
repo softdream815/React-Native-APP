@@ -1,0 +1,60 @@
+mutation postRequestItemResponse(
+  $userId: Int
+  $itemRequestId: Int
+  $title: String
+  $filePath: String
+  $fileName:String,
+  $companyId: Int = null,
+  $replyToId: Int = null
+  ) {
+    postMstItemResponse(mstItemResponse:{
+      comment: $title,
+      companyId: $companyId,
+      createdBy: null,
+      createdDate: null,
+      isAccepted: null,
+      isActive: null,
+      isRejected: null,
+      itemRequestId: $itemRequestId,
+      itemResponseId: 0,
+      modifiedBy: null,
+      modifiedDate: null,
+      replyToId: $replyToId,
+      responseDate: "2015-06-23T17:35:44.68",
+      statusId: 1,
+      userId: $userId,
+      mapItemResponseUpload:{
+        createdBy: null,
+        createdDate: "2015-08-14T13:27:23.747",
+        documentName: $fileName,
+        irUploadId: null,
+        isActive: true,
+        itemResponseId: null,
+        modifiedBy: null,
+        modifiedDate: null,
+        uploadPath: $filePath
+      }
+  	}
+  ){
+    itemResponseId,
+    comment,
+    companyId,
+    createdBy,
+    createdDate,
+    isAccepted,
+    isActive,
+    isRejected,
+    itemRequestId,
+    itemResponseId,
+    modifiedBy,
+    modifiedDate,
+    replyToId,
+    responseDate,
+    userId
+    mapItemResponseUpload{        
+      irUploadId,
+      itemResponseId,
+      uploadPath
+    }  
+  }
+}

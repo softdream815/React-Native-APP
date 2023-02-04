@@ -1,0 +1,34 @@
+mutation PostMstRating(
+   $reviewData: String!
+   $companyId: Int!
+   $specialId: Int!
+   $eflyerId: Int!
+   $ratingScore: Int!
+   $userId:Int!
+   ) {
+  postMstRating(
+    mstRating: {
+      mstRatingId: 0,
+      companyId: $companyId,
+      specialId: $specialId,
+      eflyerId: $eflyerId,
+      userId: $userId,
+      name: "",
+      contactNo: "",
+      emaiId: "",
+      review: $reviewData,
+      ratingScore: $ratingScore,
+      statusId: 0,
+      productId: 0
+    }
+  ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result
+  }
+}

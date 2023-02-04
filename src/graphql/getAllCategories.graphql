@@ -1,0 +1,19 @@
+query getAllCategroies {
+ mstCategorys{  
+      categoryIcon,
+      categoryId,
+      categoryName,
+      categoryThumbNailIcon,
+      createdBy,
+      createdDate,
+      isActive,
+      isCategory,
+      isMainCategory,
+      isMenuAllowed,
+      modifiedBy,
+      modifiedDate,
+      parentCategoryId,
+      timeDelayException
+    
+  }
+}

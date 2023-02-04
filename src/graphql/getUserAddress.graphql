@@ -1,0 +1,27 @@
+query getUserAddress {
+    getUserAddress{     
+        count,
+        currentPage,
+        message,
+        nextPage,
+        prevPage,
+        success,
+        totalPages,
+        result{    
+            userAddressID,
+            userID,  
+            streetAddress,    
+            countryID,
+            provinceID,  
+            province,    
+            cityID,
+            city,
+            suburbID,
+            suburb,
+            zipCode, 
+            longitude, 
+            latitude          
+        }
+    }
+}
+ 

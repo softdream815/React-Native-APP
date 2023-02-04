@@ -1,0 +1,39 @@
+mutation UpdateRequestItemResponse(
+  $comment: String!
+  $companyId: Int
+  $createdBy: Int
+  $createdDate: DateTime
+  $isAccepted: Boolean
+  $isActive: Boolean
+  $isRejected: Boolean
+  $itemRequestId: Int
+  $itemResponseId: Int!
+  $modifiedBy: Int
+  $modifiedDate: DateTime
+  $replyToId: Int
+  $responseDate: DateTime
+  $userId: Int!
+) {
+  updateMstItemResponse(
+    mstItemResponse: {
+      comment: $comment
+      companyId: $companyId
+      createdBy: $createdBy
+      createdDate: $createdDate
+      isAccepted: $isAccepted
+      isActive: $isActive
+      isRejected: $isRejected
+      itemRequestId: $itemRequestId
+      itemResponseId: $itemResponseId
+      modifiedBy: $modifiedBy
+      modifiedDate: $modifiedDate
+      replyToId: $replyToId
+      responseDate: $responseDate
+      userId: $userId
+      statusId: 2
+    }
+  ) {
+    itemResponseId
+    itemRequestId
+  }
+}

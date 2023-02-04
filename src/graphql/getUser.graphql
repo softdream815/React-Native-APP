@@ -1,0 +1,34 @@
+query getUser {
+  getUser{      
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      firstName,
+      lastName,
+      vGender,
+      email,
+      streetAddress,
+      provinceID,
+      provinceName,
+      cityID,
+      cityName,
+      suburbID,
+      suburbName,
+      longitude,
+      latitude,
+      zipCode,
+      userProfileImage,
+      paymentUrl,
+      packageID,
+      compPercent,
+      companyId,
+      companyStatus,
+      statusName
+    }
+  }
+}

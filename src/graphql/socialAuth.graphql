@@ -1,0 +1,18 @@
+query socialAuth($jti: String) {
+  oAuth(jti: $jti) {
+    count
+    currentPage
+    message
+    nextPage
+    prevPage
+    success
+    totalPages
+    result {
+      firstName
+      lastName
+      paymentUrl
+      token
+      tokenExpires
+    }
+  }
+}

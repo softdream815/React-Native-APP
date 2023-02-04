@@ -1,0 +1,36 @@
+query GetCustomerEnquiryList($size: Int!){
+  getCustomerEnquiryList(    
+    page: 1,
+    size: $size
+  ){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+      customerEnquiryId,
+      companyId,  
+      enquiryDate,
+      enquiryStatusId,
+      enquiryTitle,
+      enquiryDescription,
+      createdDate,
+      mstCompanyLimited{
+        companyName,
+        logoPath
+      }
+      mstCustomerEnquiryResponse{        
+        comment,
+        responseDate
+      }  
+      mapCustomerEnquiryUpload{        
+        customerEnquiryId,
+        uploadPath,
+        thumbNailPath
+      }  
+    }
+  }
+}

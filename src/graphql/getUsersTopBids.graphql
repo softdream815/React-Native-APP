@@ -1,0 +1,25 @@
+query getUserTopBids($size: Int!=100){
+  getUserTopBids(page: 1, size: $size) {
+    count
+    currentPage
+    message
+    nextPage
+    prevPage
+    success
+    totalPages
+    result {
+      userID
+      firstName
+      lastName
+      email
+      status
+      userStatus
+      userProfileImage
+      userProfileThumbNailImage
+      bidAmount
+      productID
+      productName
+      orderID
+    }
+  }
+}

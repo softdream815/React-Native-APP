@@ -1,0 +1,20 @@
+query getRatingList($key: Int, $keyType: Int, $size: Int! = 10){
+  getRatingList(key:$key,keyType:$keyType,page:1,size:$size){
+    count,
+    currentPage,
+    message,
+    nextPage,
+    prevPage,
+    success,
+    totalPages,
+    result{
+       mST_RatingID,
+       title,
+       review,
+       name,
+       ratingScore,
+       dateofReview
+      
+    }
+  }
+}

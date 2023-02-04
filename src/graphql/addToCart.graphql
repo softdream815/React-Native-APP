@@ -1,0 +1,46 @@
+mutation AddToCart(
+    $pid: Int!,
+    $userid: Int!,
+    $dateCreated: DateTime, 
+    $fromDate: DateTime = null, 
+    $endDate: DateTime = null, 
+    $quantity: Int = 1
+  ){
+    postPrdShoppingCartOptimized(
+      prdShoppingCart: {
+        productId: $pid
+        dateCreated: $dateCreated
+        quantity: $quantity
+        fromDate: $fromDate
+        endDate: $endDate
+        userId: $userid
+      }
+    ) {
+      count
+      currentPage
+      message
+      nextPage
+      prevPage
+      success
+      totalPages
+      result {
+        prdShoppingCartDto {
+          categoryID
+          categoryName
+          description
+          productID
+          productImage
+          productName
+          productNumber
+          quantity
+          recordID
+          totalPrice
+          unitCost
+        }
+        totalAmount,
+        amountExlVat,
+        vatAmount,
+        recuringAmount
+      }
+    }
+  }

@@ -1,0 +1,49 @@
+mutation AddAddress(
+  $userId: Int
+  $curdate: DateTime
+  $streetAddress: String
+  $provinceID: Int
+  $cityID:Int
+  $suburbID: Int
+  $longitude:String
+  $latitude: String
+  $zipCode:String) 
+  {
+    postUserAddress(
+      mstUserAddress: {
+        userAddressID: 0,
+        userID: $userId,
+        streetAddress:$streetAddress,
+        countryID: 1,
+        provinceID: $provinceID,
+        cityID:$cityID,
+        suburbID: $suburbID,
+        zipCode: $zipCode,
+        longitude:$longitude,
+        latitude:$latitude
+        createdDate: $curdate
+      }
+    ) 
+    {
+      count,
+      currentPage,
+      message,
+      nextPage,
+      prevPage,
+      success,
+      totalPages,
+      result{    
+        userAddressID,
+        userID,  
+        streetAddress,    
+        countryID,
+        provinceID,      
+        cityID,
+        suburbID,
+        zipCode, 
+        longitude, 
+        latitude,
+        createdDate        
+      }
+    }
+  }
